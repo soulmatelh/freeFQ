@@ -6,9 +6,9 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
   - {name: 🇭🇰 hk1, server: hk1.yuki.ren, port: 443, type: vless, uuid: c2d9519b-3fbc-469e-e534-62435353eb81, tls: true, flow: xtls-rprx-direct}
-  - {name: 🇭🇰 hk2, server: hk2.yuki.ren, port: 443, type: vless, uuid: a9408375-20bb-48e7-f1fc-b19c8e656f02, tls: true, flow: xtls-rprx-direct}
-  - {name: 🇭🇰 hk3, server: hk3.yuki.ren, port: 443, type: vless, uuid: f7d407a5-e06f-4e7b-d0f7-b196e784e30e, tls: true, flow: xtls-rprx-direct}
-  - {name: jp, server: jp.yuki.ren, port: 443, type: vless, uuid: 50b66d48-8969-48d2-ee21-e5dae2c58b93, tls: true, flow: xtls-rprx-direct}
+  - {name: 🇭🇰 hk2, server: hk2.yuki.ren, port: 443, type: vless, uuid: c2d9519b-3fbc-469e-e534-62435353eb81, tls: true, flow: xtls-rprx-direct}
+  - {name: 🇭🇰 hk3, server: hk3.yuki.ren, port: 443, type: vless, uuid: c2d9519b-3fbc-469e-e534-62435353eb81, tls: true, flow: xtls-rprx-direct}
+  - {name: jp, server: jp.yuki.ren, port: 443, type: vless, uuid: c2d9519b-3fbc-469e-e534-62435353eb81, tls: true, flow: xtls-rprx-direct}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
