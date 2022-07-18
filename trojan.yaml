@@ -5,60 +5,68 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 雪组专用tw, server: tw.yuki.ren, port: 40512, type: trojan, password: M26JK9klDf, sni: tw.yuki.ren, skip-cert-verify: true, udp: true}
   - {name: 雪组专用hk1, server: hk1.yuki.ren, port: 38625, type: trojan, password: mQY7les8Lm, sni: hk1.yuki.ren, skip-cert-verify: true, udp: true}
+  - {name: 雪组专用tw, server: tw.yuki.ren, port: 40512, type: trojan, password: M26JK9klDf, sni: tw.yuki.ren, skip-cert-verify: true, udp: true}
+  - {name: 雪组专用jp, server: jp.yuki.ren, port: 22045, type: trojan, password: NGA8KGfRBT, sni: jp.yuki.ren, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -81,12 +89,14 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 雪组专用tw
       - 雪组专用hk1
+      - 雪组专用tw
+      - 雪组专用jp
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
+ - DOMAIN-SUFFIX,lan,🎯 全球直连
  - DOMAIN-SUFFIX,local,🎯 全球直连
  - DOMAIN-SUFFIX,localhost,🎯 全球直连
  - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
@@ -121,6 +131,7 @@ rules:
  - DOMAIN,origin-a.akamaihd.net,🎯 全球直连
  - DOMAIN,xivanalysis.com,🎯 全球直连
  - DOMAIN,picanalysis.vivo.com.cn,🎯 全球直连
+ - DOMAIN,picanalysis-auth.vivo.com.cn,🎯 全球直连
  - DOMAIN,fairplay.l.qq.com,🎯 全球直连
  - DOMAIN,livew.l.qq.com,🎯 全球直连
  - DOMAIN,vd.l.qq.com,🎯 全球直连
@@ -317,7 +328,6 @@ rules:
  - DOMAIN-SUFFIX,edigitalsurvey.com,🛑 全球拦截
  - DOMAIN-SUFFIX,eduancm.com,🛑 全球拦截
  - DOMAIN-SUFFIX,emarbox.com,🛑 全球拦截
- - DOMAIN-SUFFIX,epsilon.com,🛑 全球拦截
  - DOMAIN-SUFFIX,exosrv.com,🛑 全球拦截
  - DOMAIN-SUFFIX,fancyapi.com,🛑 全球拦截
  - DOMAIN-SUFFIX,feitian001.com,🛑 全球拦截
@@ -393,7 +403,6 @@ rules:
  - DOMAIN-SUFFIX,mediaplex.com,🛑 全球拦截
  - DOMAIN-SUFFIX,mediav.com,🛑 全球拦截
  - DOMAIN-SUFFIX,megajoy.com,🛑 全球拦截
- - DOMAIN-SUFFIX,meiqia.com,🛑 全球拦截
  - DOMAIN-SUFFIX,mgogo.com,🛑 全球拦截
  - DOMAIN-SUFFIX,miaozhen.com,🛑 全球拦截
  - DOMAIN-SUFFIX,microad-cn.com,🛑 全球拦截
@@ -1242,7 +1251,6 @@ rules:
  - DOMAIN-SUFFIX,jellyfish.pandora.xiaomi.com,🍃 应用净化
  - DOMAIN-SUFFIX,migc.g.mi.com,🍃 应用净化
  - DOMAIN-SUFFIX,migcreport.g.mi.com,🍃 应用净化
- - DOMAIN-SUFFIX,mis.g.mi.com,🍃 应用净化
  - DOMAIN-SUFFIX,notice.game.xiaomi.com,🍃 应用净化
  - DOMAIN-SUFFIX,ppurifier.game.xiaomi.com,🍃 应用净化
  - DOMAIN-SUFFIX,r.browser.miui.com,🍃 应用净化
@@ -1923,6 +1931,7 @@ rules:
  - DOMAIN-SUFFIX,aaplimg.com,🍎 苹果服务
  - DOMAIN-SUFFIX,akadns.net,🍎 苹果服务
  - DOMAIN-SUFFIX,apple-cloudkit.com,🍎 苹果服务
+ - DOMAIN-SUFFIX,apple-mapkit.com,🍎 苹果服务
  - DOMAIN-SUFFIX,apple.co,🍎 苹果服务
  - DOMAIN-SUFFIX,apple.com,🍎 苹果服务
  - DOMAIN-SUFFIX,apple.com.cn,🍎 苹果服务
@@ -2896,10 +2905,16 @@ rules:
  - DOMAIN-SUFFIX,leju.com,🎯 全球直连
  - DOMAIN-SUFFIX,miaopai.com,🎯 全球直连
  - DOMAIN-SUFFIX,sina.com,🎯 全球直连
+ - DOMAIN-SUFFIX,sina.com.cn,🎯 全球直连
+ - DOMAIN-SUFFIX,sina.cn,🎯 全球直连
  - DOMAIN-SUFFIX,sinaapp.com,🎯 全球直连
+ - DOMAIN-SUFFIX,sinaapp.cn,🎯 全球直连
  - DOMAIN-SUFFIX,sinaimg.com,🎯 全球直连
+ - DOMAIN-SUFFIX,sinaimg.cn,🎯 全球直连
  - DOMAIN-SUFFIX,weibo.com,🎯 全球直连
+ - DOMAIN-SUFFIX,weibo.cn,🎯 全球直连
  - DOMAIN-SUFFIX,weibocdn.com,🎯 全球直连
+ - DOMAIN-SUFFIX,weibocdn.cn,🎯 全球直连
  - DOMAIN-SUFFIX,xiaoka.tv,🎯 全球直连
  - DOMAIN-SUFFIX,go2map.com,🎯 全球直连
  - DOMAIN-SUFFIX,sogo.com,🎯 全球直连
