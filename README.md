@@ -3,7 +3,7 @@
 </p>
 <p align="center">
   <a href="https://twitter.com/tensai_mera"><img src="https://twitter.com/favicon.ico" 
-  alt="推特"> 推特 <a href="https://www.youtube.com/channel/UCd2PQWqhUqyPdWdI6xum7pg/featured"><img src="https://www.youtube.com/favicon.ico" alt="YouTube"> YouTube <a href="https://space.bilibili.com/1600260795/"><img src="https://www.bilibili.com/favicon.ico" alt="bilibili"> bilibili </a>
+  alt="推特"> 推特 <a href="https://www.youtube.com/channel/UCd2PQWqhUqyPdWdI6xum7pg/featured"><img src="https://www.youtube.com/favicon.ico" alt="YouTube"> YouTube <a href="https://space.bilibili.com/1600260795/"><img src="https://raw.iqiq.io/soulmatelh/freeFQ/main/favicon.ico" alt="bilibili"> bilibili </a>
   </a>
 </p>
 
