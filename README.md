@@ -2,8 +2,8 @@
     <img src="https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/%E9%BB%91%E5%91%86%E7%93%9C.jpg" alt="雪宝" width=1080/>
 </p>
 <p align="center">
-  <a href="https://twitter.com/tensai_mera"><img src="https://twitter.com/favicon.ico" 
-  alt="推特"> 推特 <a href="https://www.youtube.com/channel/UCd2PQWqhUqyPdWdI6xum7pg/featured"><img src="https://www.youtube.com/favicon.ico" alt="YouTube"> YouTube <a href="https://space.bilibili.com/1600260795/"><img src="https://raw.iqiq.io/soulmatelh/freeFQ/main/favicon.ico" alt="bilibili"> bilibili </a>
+  <a href="https://twitter.com/hitome_hooo"><img src="https://twitter.com/favicon.ico" 
+  alt="推特"> 推特 <a href="https://www.youtube.com/channel/UCW-54qFSvFWHpiTyEtM2H6Q"><img src="https://www.youtube.com/favicon.ico" alt="YouTube"> YouTube <a href="https://www.twitch.tv/hitome_chan"><img src="https://www.twitch.tv/favicon.ico" alt="twitch"> twitch  <a href="https://www.instagram.com/hitome_hooo/"><img src="https://www.instagram.com/favicon.ico" alt="instagram"> instagram </a>
   </a>
 </p>
 
