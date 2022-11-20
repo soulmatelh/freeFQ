@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/Fe7wlTUaAAEffpf.jfif" alt="雪宝" width=200/>
+    <img src="https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/%E9%BB%91%E5%91%86%E7%93%9C.jpg" alt="雪宝" width=200/>
 </p>
 <p align="center">
   <a href="https://twitter.com/tensai_mera"><img src="https://twitter.com/favicon.ico" 
