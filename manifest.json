@@ -1,0 +1,38 @@
+[
+    {
+        "guid": "e4ce9da9-ef00-417c-96f2-861c512d45eb",
+        "name": "Thunder Subtitles",
+        "description": "Download subtitles from Thunder XMP. https://github.com/jjm2473/jellyfin-plugin-thundersub original source https://github.com/91270/Emby.MeiamSub\n",
+        "overview": "Download subtitles from Thunder XMP",
+        "owner": "jjm2473",
+        "category": "Metadata",
+        "versions": [
+            {
+                "version": "1.0.8.0",
+                "changelog": "https://github.com/91270/Emby.MeiamSub/commit/492294941f822595446fedcf268f4117dacebc1c\n",
+                "targetAbi": "10.7.0.0",
+                "sourceUrl": "https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/MeiamSub.Shooter/Jellyfin.MeiamSub.Shooter.dll",
+                "checksum": "06876b80a6655a9d14e7257b8233bb64",
+                "timestamp": "2022-01-07T09:29:33Z"
+            }
+        ]
+    },
+    {
+        "guid": "b44072e0-f89d-4ddb-ab5d-4b81de0fb759",
+        "name": "Shooter Subtitles",
+        "description": "Download subtitles from Shooter.cn. https://github.com/jjm2473/jellyfin-plugin-shootersub original source https://github.com/91270/Emby.MeiamSub\n",
+        "overview": "Download subtitles from Shooter.cn",
+        "owner": "jjm2473",
+        "category": "Metadata",
+        "versions": [
+            {
+                "version": "1.0.8.0",
+                "changelog": "https://github.com/91270/Emby.MeiamSub/commit/492294941f822595446fedcf268f4117dacebc1c\n",
+                "targetAbi": "10.7.0.0",
+                "sourceUrl": "https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/MeiamSub.Thunder/Jellyfin.MeiamSub.Thunder.dll",
+                "checksum": "66223e42fb79064f88cdc3ca47f87556",
+                "timestamp": "2022-01-07T08:39:45Z"
+            }
+        ]
+    }
+]
