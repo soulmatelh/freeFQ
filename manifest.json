@@ -11,7 +11,7 @@
                 "version": "1.0.8.0",
                 "changelog": "https://github.com/91270/Emby.MeiamSub/commit/492294941f822595446fedcf268f4117dacebc1c\n",
                 "targetAbi": "10.7.0.0",
-                "sourceUrl": "https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/MeiamSub.Shooter/Jellyfin.MeiamSub.Shooter.dll",
+                "sourceUrl": "https://github.yuki.ren/https://github.com/soulmatelh/freeFQ/blob/main/MeiamSub.Shooter_1.0.8.0.zip",
                 "checksum": "06876b80a6655a9d14e7257b8233bb64",
                 "timestamp": "2022-01-07T09:29:33Z"
             }
@@ -29,7 +29,7 @@
                 "version": "1.0.8.0",
                 "changelog": "https://github.com/91270/Emby.MeiamSub/commit/492294941f822595446fedcf268f4117dacebc1c\n",
                 "targetAbi": "10.7.0.0",
-                "sourceUrl": "https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/MeiamSub.Thunder/Jellyfin.MeiamSub.Thunder.dll",
+                "sourceUrl": "https://github.yuki.ren/https://github.com/soulmatelh/freeFQ/blob/main/MeiamSub.Thunder_1.0.8.0.zip",
                 "checksum": "66223e42fb79064f88cdc3ca47f87556",
                 "timestamp": "2022-01-07T08:39:45Z"
             }
