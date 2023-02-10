@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/QQ%E5%9B%BE%E7%89%8720220818141642.jpg" alt="雪宝" width=1080/>
+    <img src="https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/QQ%E5%9B%BE%E7%89%8720220818141642.jpg" alt="雪宝" width=32/>
 </p>
 <p align="center">
   <a href="https://twitter.com/hitome_hooo"><img src="https://jsd.cdn.zzko.cn/gh/soulmatelh/freeFQ@main/Twitter.ico" 
