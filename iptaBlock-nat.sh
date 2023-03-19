@@ -77,5 +77,6 @@ iptables -A OUTPUT -m string --algo kmp --string "gashpoint.com" -j DROP
 iptables -A OUTPUT -m string --algo kmp --string "gov.cn" -j DROP
 iptables -A OUTPUT -m string --algo kmp --string "edu.cn" -j DROP
 
+apt update
 apt-get install iptables ipset
 echo "----------VmShell提供的服务器审计系统脚本执行完毕----------"
