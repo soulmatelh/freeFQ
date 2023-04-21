@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         海角社区脚本
 // @namespace    haijiao-script
-// @version      0.0.15
+// @version      0.0.16
 // @author       memopac
 // @description  海角社区视频解析
 // @license      MIT
@@ -53,49 +53,59 @@
           method: "GET",
           url,
           onload: function({ response }) {
+            console.log("response: ", response);
+            let url2 = "";
             try {
-              const formatStr = String(response).match(/({.*})/);
-              if (!formatStr) {
-                return;
-              }
-              const formatObj = JSON.parse(formatStr[1]);
-              if (formatObj == null ? void 0 : formatObj.data) {
-                const validUrl = isValidHttpUrl(formatObj == null ? void 0 : formatObj.data);
-                if (validUrl) {
-                  crackBtn.hide();
-                  const url2 = formatObj == null ? void 0 : formatObj.data;
-                  const encodeUrl2 = `https://m3u8play.com/?play=${encodeURIComponent(
-                  url2
-                )}`;
-                  const encodeUrl1 = `https://m.auok.run/player/#${url2}`;
-                  const sellContainer = document.querySelector("span.sell-btn");
-                  jumpLink1.attr("href", encodeUrl1);
-                  jumpLink2.attr("href", encodeUrl2);
-                  if (sellContainer) {
-                    sellContainer.innerHTML = "";
-                    new DPlayer({
-                      container: sellContainer,
-                      autoplay: false,
-                      theme: "#FADFA3",
-                      loop: true,
-                      lang: "zh",
-                      screenshot: true,
-                      hotkey: true,
-                      preload: "auto",
-                      video: {
-                        url: url2,
-                        type: "hls"
-                      }
-                    });
-                  }
-                  copyBtn.on("click", () => {
-                    _GM_setClipboard(url2, "text/plain");
-                  });
-                  jumpLink1.show();
-                  jumpLink2.show();
-                  copyBtn.show();
+              const isUrl = isValidHttpUrl(response);
+              if (isUrl) {
+                url2 = response;
+              } else {
+                const formatStr = String(response).match(/({.*})/);
+                if (!formatStr) {
+                  crackBtn.html(String(response));
                   return;
                 }
+                const formatObj = JSON.parse(formatStr[1]);
+                if (formatObj == null ? void 0 : formatObj.data) {
+                  const validUrl = isValidHttpUrl(formatObj == null ? void 0 : formatObj.data);
+                  if (validUrl) {
+                    url2 = formatObj == null ? void 0 : formatObj.data;
+                  }
+                }
+              }
+              if (url2) {
+                crackBtn.hide();
+                const encodeUrl2 = `https://m3u8play.com/?play=${encodeURIComponent(
+                url2
+              )}`;
+                const encodeUrl1 = `https://m.auok.run/player/#${url2}`;
+                const sellContainer = document.querySelector("span.sell-btn");
+                jumpLink1.attr("href", encodeUrl1);
+                jumpLink2.attr("href", encodeUrl2);
+                if (sellContainer) {
+                  sellContainer.innerHTML = "";
+                  new DPlayer({
+                    container: sellContainer,
+                    autoplay: false,
+                    theme: "#FADFA3",
+                    loop: true,
+                    lang: "zh",
+                    screenshot: true,
+                    hotkey: true,
+                    preload: "auto",
+                    video: {
+                      url: url2,
+                      type: "hls"
+                    }
+                  });
+                }
+                copyBtn.on("click", () => {
+                  _GM_setClipboard(url2, "text/plain");
+                });
+                jumpLink1.show();
+                jumpLink2.show();
+                copyBtn.show();
+                return;
               }
               container.hide();
             } catch (error) {
