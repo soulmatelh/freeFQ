@@ -1,0 +1,22 @@
+name: 更新文件
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天午夜执行 (UTC 时间)
+  workflow_dispatch:
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 下载文件
+        run: curl -o halflife.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad3.txt
+
+      - name: 提交和推送更改
+        run: |
+          git config --global user.name "您的姓名"
+          git config --global user.email "您的电子邮件地址"
+          git add .
+          git commit -m "更新文件 halflife.txt"
+          git push origin HEAD:main
