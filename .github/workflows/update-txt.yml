@@ -10,13 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 设置 Git 用户信息
+        run: |
+          git config --global user.name "soulmatelh"
+          git config --global user.email "soulmatelh@foxmail.com"
+
       - name: 下载文件
         run: curl -o halflife.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad3.txt
 
       - name: 提交和推送更改
         run: |
-          git config --global user.name "soulmatelh"
-          git config --global user.email "soulmatelh@foxmail.com"
+          git init
           git add .
           git commit -m "更新文件 halflife.txt"
-          git push origin HEAD:main
+          git push --force --quiet origin HEAD:main
