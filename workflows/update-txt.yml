@@ -15,8 +15,8 @@ jobs:
 
       - name: 提交和推送更改
         run: |
-          git config --global user.name "您的姓名"
-          git config --global user.email "您的电子邮件地址"
+          git config --global user.name "soulmatelh"
+          git config --global user.email "soulmatelh@foxmail.com"
           git add .
           git commit -m "更新文件 halflife.txt"
           git push origin HEAD:main
