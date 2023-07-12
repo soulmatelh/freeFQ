@@ -10,19 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 设置 Git 用户信息
+        run: |
+          git config --global user.name "soulmatelh"
+          git config --global user.email "soulmatelh@foxmail.com"
+      
       - name: 克隆仓库
         uses: actions/checkout@v2
       
       - name: 下载文件
         run: curl -o halflife.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad3.txt
       
-      - name: 复制文件到仓库目录
-        run: cp halflife.txt https://github.com/soulmatelh/freeFQ/halflife.txt
-      
       - name: 提交和推送更改
         run: |
-          git config --global user.name "soulmatelh"
-          git config --global user.email "soulmatelh@foxmail.com"
-          git add .
+          git add halflife.txt
           git commit -m "更新文件 halflife.txt"
+          git remote set-url origin https://github.com/soulmatelh/freeFQ.git
           git push origin HEAD:main
