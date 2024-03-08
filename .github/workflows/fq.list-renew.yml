@@ -3,6 +3,7 @@ name: Run Script Every 12 Hours
 on:
   schedule:
     - cron: '0 */12 * * *'  # 每隔12小时执行一次
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   run-script:
