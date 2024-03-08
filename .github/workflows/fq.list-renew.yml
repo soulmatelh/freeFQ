@@ -20,5 +20,5 @@ jobs:
 
     - name: Run the script
       run: |
-        chmod +x .github/workflows/script.sh  # 给脚本添加执行权限
-        .github/workflows/script.sh  # 执行存储库中的 .github/workflows/script.sh 脚本
+        chmod +x .github/workflows/fq-renew.sh  # 给脚本添加执行权限
+        .github/workflows/fq-renew.sh  # 执行存储库中的 .github/workflows/script.sh 脚本
