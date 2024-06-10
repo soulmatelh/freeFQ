@@ -1,0 +1,20 @@
+name: Update fq.list
+on:
+  workflow_dispatch:  # 手动触发执行
+
+jobs:
+  update-fq-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download file from URL
+        run: |
+          curl -o fq.list "https://alvless.comorg.us.kg/sub?host=vless.yuki.ren&uuid=3ff0a08f-e7ef-46c7-9a5e-3970f2e295ca&path=%2F%3Fed%3D2560"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add fq.list
+          git commit -m "Update fq.list"
+          git push
+
