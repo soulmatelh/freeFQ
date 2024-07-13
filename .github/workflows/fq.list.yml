@@ -1,8 +1,8 @@
 name: Update fq.list
 on:
-  #workflow_dispatch:
-  schedule:
-   - cron: '0 */12 * * *'  # 每天每隔6小时执行一次
+  workflow_dispatch:
+  #schedule:
+   #- cron: '0 */12 * * *'  # 每天每隔6小时执行一次
 
 jobs:
   update-fq-list:
@@ -14,7 +14,7 @@ jobs:
       - name: Download file from URL
         run: |
           rm fq.list  # 删除旧的 fq.list 文件
-          curl -o fq.list "https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc"
+          curl -o fq.list "https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -f fq.list  # 使用 -f 选项强制覆盖
