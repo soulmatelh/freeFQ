@@ -2,7 +2,7 @@ name: Update fq.list
 on:
   #workflow_dispatch:
   schedule:
-   - cron: '0 9 * * *'  # 每天每隔6小时执行一次
+   - cron: '0 9 * * *'  # 每天9点执行一次
 
 jobs:
   update-fq-list:
