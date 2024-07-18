@@ -1,25 +1,22 @@
-name: Download and Upload Release Asset with Name and Version
+name: Update fq.list
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+   - cron: '0 */6 * * *'  
 jobs:
-  build-and-deploy:
+  update-fq-list:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Download file
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Download file from URL
         run: |
-          wget https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64 -O fq.list
-      - name: Set release name and version
-        id: set_release_info
+          curl -o fq.list "https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add fq.list
+          git commit -m "Update fq.list"
+          git push
+      - name: Purge jsdelivr CDN
         run: |
-          echo "RELEASE_NAME=${{ github.run_id }}" >> $GITHUB_ENV
-          echo "TAG_NAME=${{ github.run_id }}" >> $GITHUB_ENV
-      - name: Upload release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./fq.list
-          asset_nam
+          curl -i "https://purge.jsdelivr.net/gh/soulmatelh/freeFQ@main/fq.list"
