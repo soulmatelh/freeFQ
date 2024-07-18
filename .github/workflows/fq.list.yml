@@ -1,30 +1,25 @@
-name: Git push assets to "release" branch with variables
+name: Download and Upload Release Asset with Name and Version
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */12 * * *'  # 每天每隔6小时执行一次
+  push:
+    branches: [ main ]
 jobs:
-  update-fq-list:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Download file from URL
+      - uses: actions/checkout@v2
+      - name: Download file
         run: |
           wget https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64 -O fq.list
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-      - name: Set variables
+      - name: Set release name and version
+        id: set_release_info
         run: |
-          RELEASE_NAME=$(date +"%Y%m%d%H%M")
-          TAG_NAME=$(date +"%Y%m%d%H%M")
-          echo "RELEASE_NAME=$RELEASE_NAME" >> $GITHUB
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB
-      - name: Create release branch
-        run: |
-          git checkout -b release
-      - name: Git push assets to "release" branch
-        run: |
-          git add fq.list
-          git commit -m "Update fq.list"
-          git push -f origin release
+          echo "RELEASE_NAME=${{ github.run_id }}" >> $GITHUB_ENV
+          echo "TAG_NAME=${{ github.run_id }}" >> $GITHUB_ENV
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./fq.list
+          asset_nam
