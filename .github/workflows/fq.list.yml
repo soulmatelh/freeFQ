@@ -2,7 +2,7 @@ name: Update fq.list
 on:
   workflow_dispatch:
   #schedule:
-   #- cron: '0 */4 * * *'  # 每天9点执行一次
+   #- cron: '0 */12 * * *'  # 每天每隔6小时执行一次
 
 jobs:
   update-fq-list:
@@ -19,10 +19,3 @@ jobs:
           git add -f fq.list  # 不再使用 -f 选项
           git commit -m "Update fq.list"
           git push
-        - name: Retry on failure
-          if: ${{ failure() }}
-          uses: retry/retry@v2
-          with:
-            timeout_minutes: 5
-            retry_on: 'failure'
-            max_attempts: 3
