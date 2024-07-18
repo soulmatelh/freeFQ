@@ -1,4 +1,4 @@
-name: 更新 fq.list
+name: Update fq.list
 on:
   workflow_dispatch:
   #schedule:
@@ -7,10 +7,10 @@ on:
 jobs:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出代码
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 从 URL 下载文件
+      - name: Download file from URL
         run: |
           curl -o fq.list "https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64"
           git config --local user.email "action@github.com"
@@ -18,7 +18,7 @@ jobs:
           git add fq.list
           git commit -m "更新 fq.list"
           git push
-      - name: 失败时重试
+      - name: Retry on failure
         if: ${{ failure() }}
         uses: retry/retry@v2
         with:
