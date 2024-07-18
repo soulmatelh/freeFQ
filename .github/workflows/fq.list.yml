@@ -2,7 +2,7 @@ name: Update fq.list
 on:
   workflow_dispatch:
   schedule:
-   - cron: '0 */6 * * *'  
+   - cron: '0 9 * * *'  
 jobs:
   update-fq-list:
     runs-on: ubuntu-latest
