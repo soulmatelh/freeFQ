@@ -18,11 +18,13 @@ jobs:
         run: |
           RELEASE_NAME=$(date +"%Y%m%d%H%M")
           TAG_NAME=$(date +"%Y%m%d%H%M")
-          echo "RELEASE_NAME=$RELEASE_NAME" >> $GITHUB_ENV
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+          echo "RELEASE_NAME=$RELEASE_NAME" >> $GITHUB
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB
+      - name: Create release branch
+        run: |
+          git checkout -b release
       - name: Git push assets to "release" branch
         run: |
-          git checkout release
           git add fq.list
           git commit -m "Update fq.list"
           git push -f origin release
