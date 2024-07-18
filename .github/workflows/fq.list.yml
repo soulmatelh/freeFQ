@@ -17,6 +17,3 @@ jobs:
           git add -f fq.list
           git commit -m "Update fq.list"
           git push -f
-      - name: Purge jsdelivr CDN
-        run: |
-          curl -i "https://purge.jsdelivr.net/gh/soulmatelh/freeFQ@main/fq.list"
