@@ -1,21 +1,27 @@
-name: Update fq.list
+name: 更新 fq.list
 on:
-  #workflow_dispatch:
-  schedule:
-   - cron: '0 */4 * * *'  # 每天9点执行一次
+  workflow_dispatch:
+  #schedule:
+   #- cron: '0 */4 * * *'  # 每天9点执行一次
 
 jobs:
-  update-fq-list:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: Download file from URL
+      - name: 从 URL 下载文件
         run: |
           curl -o fq.list "https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -f fq.list  # 不再使用 -f 选项
-          git commit -m "Update fq.list"
+          git add fq.list
+          git commit -m "更新 fq.list"
           git push
+      - name: 失败时重试
+        if: ${{ failure() }}
+        uses: retry/retry@v2
+        with:
+          timeout_minutes: 5
+          retry_on: 'failure'
+          max_attempts: 3
