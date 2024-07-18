@@ -22,5 +22,7 @@ jobs:
           echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
       - name: Git push assets to "release" branch
         run: |
-          git checkout -b release
-          git push -f -u origin release
+          git checkout release
+          git add fq.list
+          git commit -m "Update fq.list"
+          git push -f origin release
