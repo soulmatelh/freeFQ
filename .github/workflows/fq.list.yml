@@ -16,7 +16,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add fq.list
-          git commit -m "更新 fq.list"
+          git commit -m "Update fq.list"
           git push
       - name: Retry on failure
         if: ${{ failure() }}
