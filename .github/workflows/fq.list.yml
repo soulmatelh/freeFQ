@@ -5,6 +5,7 @@ on:
    #- cron: '0 */4 * * *'  # 每天9点执行一次
 
 jobs:
+    update-fq-list:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
