@@ -5,7 +5,7 @@ on:
    #- cron: '0 */4 * * *'  # 每天9点执行一次
 
 jobs:
-    update-fq-list:
+  update-fq-list:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,13 +16,6 @@ jobs:
           curl -o fq.list "https://vless.yuki.ren/8ed96004-092c-42e9-9922-06a5080cdacc?base64"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add fq.list
+          git add -f fq.list  # 不再使用 -f 选项
           git commit -m "Update fq.list"
           git push
-      - name: Retry on failure
-        if: ${{ failure() }}
-        uses: retry/retry@v2
-        with:
-          timeout_minutes: 5
-          retry_on: 'failure'
-          max_attempts: 3
