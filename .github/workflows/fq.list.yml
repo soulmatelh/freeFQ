@@ -18,4 +18,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -f fq.list  # 不再使用 -f 选项
           git commit -m "Update fq.list"
-          git push
+          git push -f
