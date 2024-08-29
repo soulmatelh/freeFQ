@@ -1,0 +1,12 @@
+{
+    "servers": [
+        {
+            "name": "内网",
+            "address": "http://192.168.2.123:6969"
+        },
+        {
+            "name": "外网",
+            "address": "http://www.yuki.ren:6969"
+        }
+    ]
+}
