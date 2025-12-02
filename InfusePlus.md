@@ -74,7 +74,7 @@ This guide will walk you through creating your own InfusePlus IPA using Azule. T
 1. **Download the decrypted Infuse IPA**: Visit https://armconverter.com/decryptedappstore/ and search for "Infuse" and download it. You will need to sign up for an iOSGods account to access this service, which is pretty simple. Alternatively, you can use https://decrypt.day/ (no sign-up required, but may not have the latest version).
 
 2. **Download the InfusePlus tweak file**: Get the InfusePlus tweak from the following link:
-    [InfusePlus v1.2.0](https://github.com/dayanch96/InfusePlus/releases/download/v1.2.0/com.dvntm.infuseplus_1.2.0_iphoneos-arm.deb)
+    [InfusePlus](https://github.com/dayanch96/InfusePlus/)
 
 ---
 
