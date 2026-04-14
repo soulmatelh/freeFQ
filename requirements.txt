@@ -1,0 +1,3 @@
+faster-whisper
+ordered-set
+# 如果需要特定版本的 torch，也可以加上
