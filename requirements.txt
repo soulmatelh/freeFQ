@@ -1,3 +1,4 @@
-faster-whisper
-ordered-set
-# 如果需要特定版本的 torch，也可以加上
+faster-whisper==1.0.3
+huggingface_hub
+# 下面是确保打包兼容性的依赖
+setuptools
