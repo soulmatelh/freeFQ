@@ -1,4 +1,2 @@
 faster-whisper
-huggingface_hub
-# 下面是确保打包兼容性的依赖
 setuptools
